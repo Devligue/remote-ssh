@@ -1,23 +1,11 @@
-# remote-ssh package
+# remote-ssh-kitty package
 
-Remote SSH is a little helper tool to quickly start Putty and connect to a potential server you are currently working on.
-The usage of Putty implies a Windows-only functionality at this point for this package.
-For Remote SSH to work you need a .ftpconfig file in your project folder in the format of _at least_
-```
-{
-    "protocol": "sftp",
-    "host": "",
-    "port": 22,
-    "user": "user",
-    "pass": "pass",
-	"session": ""
-}
-```
+Fork of [github.com/dsone/remote-ssh](http://github.com/dsone/remote-ssh "dsone/remote-ssh").
 
-Wheras SFTP is default for Remote SSH.
-The session option was added in case you have saved sessions in Putty and you want to re-use those. Just enter the name of your saved session.
+It uses Kitty instead of Putty and allows integration with ConEmu64.
 
-For Remote SSH to work it should be in a global (environment) path, making it accessible from everywhere.
+If you provide `remote` parameter in `.ftpconfig` Kitty will automatically change directory when connecting.
 
-Default Shortcut is `CTRL+ALT+R` to start a new Putty connection.
-`CTRL+ALT+F` to create a new config file.
+Setting `integration` parameter to `conemu` will open kitty ssh session in new ConEmu tab.
+
+**Disclaimer**: both `kitty` and `ConEmu64` must be on you system PATH.
